@@ -18,9 +18,13 @@ public class MainController {
 
     @GetMapping("/")
     public String home(Model model) {
-        Iterable<Post> posts = postRepository.findAll();
-        model.addAttribute("posts",posts);
+        model.addAttribute("title","Insert");
         return "home";
     }
-
+    @GetMapping("/database")
+    public String database(Model model) {
+        Iterable<Post> posts = postRepository.findAll();
+        model.addAttribute("databases","Databases");
+        return "database";
+    }
 }
